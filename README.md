@@ -15,9 +15,8 @@ Hashing (smaller dynamic direct access array)(还未深入理解，有待继续�
 
 
 2023/1/22
-ps2
-Problem 2-2 Sorting Sorts
-selection-sort insert-sort merge-sort
+ps2  Problem 2-2 Sorting Sorts   selection-sort insert-sort merge-sort
+
 (a)Selection-sort:因为在a情况下，数据结构D支持的set_at(i,x)操作在最坏情况下花费Θ(nlogn)的时间，而get_at(i)操作在最坏情况下只花费Θ(1)的时间，
 因而在排序的时候set_at(i,x)操作是影响运行时间的关键项，所以需要选择一个执行set_at(i,x)操作最少的排序算法。
 在选择排序、插入排序、归并排序三种排序算法中，选择排序所执行的set_at(i,x)操作是最少的。因为它确认好每一轮排序时的最大值（或最小值）的位置后，
