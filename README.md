@@ -38,6 +38,8 @@ ps2  Problem 2-2 Sorting Sorts   selection-sort insert-sort merge-sort
 
 2023/1/25
 Ps2-3 Friend Finder
+
+
 算法：
 第一步：Πcard先跳到岛的中心，如果Datum恰好在这个位置，则找到Datum,结束寻找；否则用tracking device 判断Datum的方位，N or S，执行第二步；
 
