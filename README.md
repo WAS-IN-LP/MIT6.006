@@ -52,3 +52,29 @@ Ps2-3 Friend Finder
 第五步：此时确定k在2^(logk(向下取整)) ~ 2^((logk(向下取整))+1) 之间，然后使用二分查找法，找到Datum,结束查找；使用二分查找确定Datum所在的k位置需要访问（log(2^(logk(向下取整)))）+1个位置，即(logk(向下取整))+1个位置；
 
 综上，这个算法所需要访问的位置的个数最坏情况为2+((logk)(向下取整)+1)+ ((logk)(向下取整)+1),即4+2*((logk)(向下取整))，即O(log k) locations。
+
+2023/1/26
+ps2-4  MixBookTube.tv Chat 
+这道题暂时只想了一下思路，具体的结果还没有再继续思考下去（因为发现6.006对于初学者来说还是不太适合作为数据结构与算法的入门课，它更偏向于算法，大多数题主要考察算法思路，实际动手写代码的部分并不多，而我基础的数据结构代码部分本来就练习得少，并且对于代码部分非常不熟练，所以还是转而选择CS61B作为数据结构与算法的入门课，希望它给我的学习体验会好些吧）
+思路部分：
+viewers 需要一个数据结构体，
+typedef struct viewer
+{
+  int ID;
+  bool banned;
+}viewer
+ID代表viewer，banned 代表viewer是否被ban;
+
+messages
+typedef struct message
+{
+  time t;
+  int ID;
+  string m;  
+}message
+t代表message被发送时的时间，ID代表message是被哪个viewer所发送的，m代表message的内容；
+
+chat room，The chat consists of a linear stream of messages；也就是说chat room是由线性的messages流组成的，初步设想chat room 所需的数据结构应该是一个链表（link list）型的结构，因为它是线性的，且需要实时插入新的被发送的messages,或者实时删除被ban的viewer所发送的messages;
+
+对于screen所显示的k条messages，即recent(k),从chat room 中获取 the k most recent not-deleted messages;
+以上就是暂时关于ps2-4的一点思考。
